@@ -1,4 +1,6 @@
-FROM golang:1.13.6-alpine AS build_deps
+FROM --platform=$BUILDPLATFORM golang:alpine AS build_deps
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
 
 RUN apk add --no-cache git
 
